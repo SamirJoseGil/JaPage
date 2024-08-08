@@ -1,9 +1,11 @@
+import React from 'react'
+import MainApp from './Components/Organisms/MainApp/MainApp'
 import './App.css'
 
 function App() {
   return (
     <>
-      <h1>hello world</h1>
+      <MainApp/>
     </>
   )
 }
