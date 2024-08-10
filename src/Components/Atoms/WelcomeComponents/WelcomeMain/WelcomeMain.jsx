@@ -1,3 +1,5 @@
+import ImageGallery from '../../../Molecules/ImageGallery/ImageGallery';
+
 function MiniMain() {
     return (
         <div>
