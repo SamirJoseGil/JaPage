@@ -1,0 +1,148 @@
+#root {
+  width: 100%;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  } 
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.footer {
+  width: 100%;
+  height: 4rem;
+  bottom: 0;
+}
+
+.FaceboockLogo {
+  width: 30px;
+  height: auto;
+}
+
+.Icon {
+  margin-left: 10px;
+}
+
+.navbar-logo {
+  height: 100%;
+  max-height: 50px;
+  width: auto;
+  margin: 0 1.5rem;
+}
+
+
+.main-app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  margin-top: 70px;
+  padding-bottom: 56px;
+}
+
+.ImagesBackground {
+  width: 100%;
+  height: 350px;
+  /* Ajustar según el tamaño deseado */
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.ImagesContainer {
+  display: flex;
+  width: calc(200%);
+  animation: move 20s linear infinite;
+}
+
+.MovingImages {
+  max-height: 350px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.position-relative {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.overlay-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 100%;
+}
+
+.image-container {
+  z-index: 9000;
+  left: 4rem;
+}
+
+.title-logo {
+  height: 100%;
+  max-height: 120px;
+  width: auto;
+  margin: 0 1.5rem;
+  bottom: -10rem;
+}
+
+.title-spacing {
+  background-color: white;
+  width: 100%;
+}
