@@ -2,35 +2,37 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { Container, Nav, Navbar } from 'react-bootstrap';
 
-
-
-
-
-
 export default Jaipera;
 
 function Jaipera() {
     return (
-        <div>
-            <h1>Quienes Somos?</h1>
-            <div>
-                <Navbar bg="light" expand="lg">
-                    <Container>
+        <div className='margin-top'>
+            <div className="container">
+                <div className="d-flex justify-content-center align-items-center">
+                    <img src="" alt="" className='' />
+                    <h1 className=''>Quienes Somos?</h1>
+                </div>
+            </div>
+            <div className='container'>
+                <Navbar bg="light" expand="lg" className='header-jaipera'>
+                    <Container fluid className='d-flex justify-content-center'>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
                                 <Nav.Link as={Link} to="/Jaipera">Inicio</Nav.Link>
-                                <Nav.Link as={Link} to="/Jaipera/InstitutionalSymbols">Simbolos Institucionales</Nav.Link>
                                 <Nav.Link as={Link} to="/Jaipera/History">Historia</Nav.Link>
                                 <Nav.Link as={Link} to="/Jaipera/Horizont">Horizonte</Nav.Link>
                                 <Nav.Link as={Link} to="/Jaipera/InstitutionalValues">Valores</Nav.Link>
                                 <Nav.Link as={Link} to="/Jaipera/InstitutionalObjectives">Objetivos</Nav.Link>
+                                <Nav.Link as={Link} to="/Jaipera/InstitutionalSymbols">Simbolos Institucionales</Nav.Link>
                                 <Nav.Link as={Link} to="/Jaipera/PrinciplesFoundations">Principios y Fundamentos</Nav.Link>
                                 <Nav.Link as={Link} to="/Jaipera/CoexistencialManual">Manual de Convivencia</Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>
+            </div>
+            <div>
                 <Routes>
                     <Route path="/" element={
                         <div className="container">
@@ -40,13 +42,16 @@ function Jaipera() {
                                     <p>
                                         La Institución Educativa Rural Jaipera (I.E.R. Jaipera), ubicada en el municipio de Urrao, Antioquia, es una comunidad educativa comprometida con la formación integral de hombres y mujeres líderes, emprendedores, y responsables con el medio natural, social y familiar. Desde nuestra fundación en 1981, hemos trabajado para brindar una educación de calidad que prepare a nuestros estudiantes para enfrentar los desafíos del mundo actual, mediante la potenciación de habilidades académicas, investigativas, técnicas y tecnológicas.
                                     </p>
+                                    <div className='text-center'>
+                                        <img src="/Img/Jaipera.png" alt="Jaipera" className='img-fluid jaipera-img margin-top'/>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     } />
-                    <Route path="InstitutionalSymbols" element={<InstitucionalSymbols />} />
                     <Route path="History" element={<History />} />
                     <Route path="Horizont" element={<Horizont />} />
+                    <Route path="InstitutionalSymbols" element={<InstitucionalSymbols />} />
                     <Route path="InstitutionalValues" element={<InstitutionalValues />} />
                     <Route path="PrinciplesFoundations" element={<PrinciplesFoundations />} />
                     <Route path="InstitutionalObjectives" element={<InstitutionalObjectives />} />
@@ -57,20 +62,6 @@ function Jaipera() {
     );
 }
 
-
-function CoexistencialManual() {
-    return (
-        <div className="container">
-            <div className="card">
-                <h2>Manual de Convivencia</h2>
-                <div className="card-body text-start">
-                </div>
-            </div>
-        </div>
-    )
-}
-
-
 function History() {
     return (
         <div className="container">
@@ -80,11 +71,13 @@ function History() {
                 <div className="card-body text-start">
                     <p>En el año de 1981 la asociación de padres de familia de la escuela “ Eduardo Uribe Botero ” encabezada por la señora Teresa Duque Higuita, en común acuerdo con la Junta de Acción Comunal del barrio Jaiperá; solicitaron la creación de una Concentración Educativa a la Secretaría de Educación y Cultura del Departamento de Antioquia, con el fin de que sus hijos y demás jóvenes pudieran continuar Educación Básica Secundaria; ya que a muchos les era imposible desplazarse hasta el Liceo Simón Bolívar o hasta la Normal Sagrada Familia. Dicha petición fue concedida en parte, a través del Distrito Educativo, que autorizó al Liceo Departamental Simón Bolívar para que desplazara un grado sexto (6°) a la escuela Uribe Botero, el cual funcionó como Sección del citado Liceo; siendo nombrada la profesora Rosa Idalia Higuita mediante Decreto No. 881 del 13 de Abril del 81 para dictar las áreas respectivas con la colaboración de los sacerdotes del Seminario en el área de Religión, de la educadora Teresa Duque profesora del Liceo Simón Bolívar en el área de Tecnológicas siendo, Rector el Señor Humberto Henao. Al cabo de un año fue trasladado a ésta sección el profesor Ramón Antonio Cossío Rivera, quien venía de la escuela rural integrada El Topacio por Decreto No. 1994 de octubre 14 de 1981 y la profesora existente pasó como seccional del Liceo siendo Rectora Luz Dary Marulanda. Desde el preciso momento en que se trasladó el grupo, la comunidad con la junta de Acción Comunal del barrio Jaiperá, construyeron 3 aulas y unidad sanitaria con auxilios conseguidos por intermedio del Doctor Iván Restrepo Gómez. También se siguió gestionando la creación de la concentración sin obtener respuesta positiva por parte de la secretaría de Educación.</p>
                 </div>
+                <div className='text-center'>
+                    <img src="/Img/JaiperaEntrance.png" alt="entrada Jaipera" className='img-fluid margin-top jaipera-img'/>
+                </div>
             </div>
         </div>
     )
 }
-
 
 function Horizont() {
     return (
@@ -108,43 +101,29 @@ function Horizont() {
     )
 }
 
-
-function InstitucionalSymbols() {
+function InstitutionalValues() {
     return (
         <div className="container">
             <div className="card">
-                <h2>Simbolos Institucionales</h2>
+                <h2>Nuestros Valores</h2>
                 <div className="card-body text-start">
-                    <h3>La Bandera</h3>
-                    <p></p>
-                    <img src="" alt="" />
-                    <hr />
-
-                    <h3>El Escudo</h3>
-                    <p></p>
-                    <img src="" alt="" />
-                    <hr />
-
-                    <h3>El Himno</h3>
-                    <p></p>
-                    <div className="container d-flex justify-content-center align-items-center">
-                        <audio controls>
-                            <source src="" type="audio/mpeg" />
-                            Your browser does not support the audio element.
-                        </audio>
-                    </div>
-
-                    <hr />
-
-                    <h3>El Lema</h3>
-                    <p></p>
-                    <img src="" alt="" />
+                    <p>
+                        Para nuestra Institución Educativa Jaiperá los valores son las actitudes positivas, disposiciones permanentes de ánimo para obrar en consonancia con las grandes correcciones de lo que es bueno, mejor, óptimo y fundamental en la búsqueda de la  plena realización humana vivenciados en comunidad, y resultados de forjar en cierta forma, modos de vida cimentados mediante el testimonio colectivo en la Institución, la familia y comunidad en general
+                    </p>
+                    <p>
+                        Será prioridad en nuestra Institución, la vivencia de los valores señalados en la Ley General de Educación y en particular los orientados hacia la práctica del RESPETO,  la TOLERANCIA,  la RESPONSABILIDAD,  y el ejercicio de la LIBERTAD,  para educar debidamente en todas las acciones con SOLIDARIDAD,  HONESTIDAD Y SENTIDO DE LA JUSTICIA  y  la PERTENENCIA con el Plantel.
+                    </p>
+                </div>
+                <h5>
+                    "CON RESPONSABILIDAD Y UNIDAD AVANCEMOS HACIA LA CALIDAD"
+                </h5>
+                <div className='text-center'>
+                    <img src="/Img/JaiperaValue.png" alt="Valores Jaipera" className='margin-top img-fluid jaipera-img' />
                 </div>
             </div>
         </div>
-    );
+    )
 }
-
 
 function InstitutionalObjectives() {
     return (
@@ -210,28 +189,41 @@ function InstitutionalObjectives() {
     )
 }
 
-
-function InstitutionalValues() {
+function InstitucionalSymbols() {
     return (
         <div className="container">
             <div className="card">
-                <h2>Nuestros Valores</h2>
+                <h2>Simbolos Institucionales</h2>
                 <div className="card-body text-start">
-                    <p>
-                        Para nuestra Institución Educativa Jaiperá los valores son las actitudes positivas, disposiciones permanentes de ánimo para obrar en consonancia con las grandes correcciones de lo que es bueno, mejor, óptimo y fundamental en la búsqueda de la  plena realización humana vivenciados en comunidad, y resultados de forjar en cierta forma, modos de vida cimentados mediante el testimonio colectivo en la Institución, la familia y comunidad en general
-                    </p>
-                    <p>
-                        Será prioridad en nuestra Institución, la vivencia de los valores señalados en la Ley General de Educación y en particular los orientados hacia la práctica del RESPETO,  la TOLERANCIA,  la RESPONSABILIDAD,  y el ejercicio de la LIBERTAD,  para educar debidamente en todas las acciones con SOLIDARIDAD,  HONESTIDAD Y SENTIDO DE LA JUSTICIA  y  la PERTENENCIA con el Plantel.
-                    </p>
+                    <h3>La Bandera</h3>
+                    <p></p>
+                    <img src="" alt="" />
+                    <hr />
+
+                    <h3>El Escudo</h3>
+                    <p></p>
+                    <img src="" alt="" />
+                    <hr />
+
+                    <h3>El Himno</h3>
+                    <p></p>
+                    <div className="container d-flex justify-content-center align-items-center">
+                        <audio controls>
+                            <source src="" type="audio/mpeg" />
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+
+                    <hr />
+
+                    <h3>El Lema</h3>
+                    <p></p>
+                    <img src="" alt="" />
                 </div>
-                <h5>
-                    "CON RESPONSABILIDAD Y UNIDAD AVANCEMOS HACIA LA CALIDAD"
-                </h5>
             </div>
         </div>
-    )
+    );
 }
-
 
 function PrinciplesFoundations() {
     return (
@@ -295,6 +287,18 @@ function PrinciplesFoundations() {
                             </p>
                         </li>
                     </ol>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+function CoexistencialManual() {
+    return (
+        <div className="container">
+            <div className="card">
+                <h2>Manual de Convivencia</h2>
+                <div className="card-body text-start">
                 </div>
             </div>
         </div>

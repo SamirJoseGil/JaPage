@@ -72,18 +72,21 @@ function App() {
   )
 }
 
-
 function Contactanos() {
   return (
-    <div>
+    <div className='margin-top'>
       <h1>Contactanos</h1>
       <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: '62vh' }}>
-        <div className="card">
-          <h5 className="card-text text-center"><strong>Institución Educativa Jaiperá</strong></h5>
-          <div className="card-body text-start">
-            <h5 className="card-text"><strong>Teléfono:</strong> 8503593</h5>
-            <h5 className="card-text"><strong>Facebook:</strong> <a href="https://www.facebook.com/institucioneducativa.jaipera" target="_blank" rel="noopener noreferrer">@institucioneducativa.jaipera</a></h5>
-            <h5 className="card-text"><strong>Email:</strong> <a href="mailto:institucioneducativajaipera@hotmail.com">institucioneducativajaipera@hotmail.com</a></h5>
+        <div className="card shadow-lg p-3 mb-5 bg-white rounded green-border" style={{ maxWidth: '600px' }}>
+          <div className="card-header text-center green-border">
+            <h5><strong>Institución Educativa Jaiperá</strong></h5>
+          </div>
+          <div className="card-body text-start green-border">
+            <h5 className="card-text"><strong>Dirección:</strong> Cl. 39 #25-14, Urrao, Antioquia</h5>
+            <h5 className="card-text"><strong>Horario de atención:</strong> 8:00 am - 3:00 pm</h5>
+            <h5 className="card-text"><strong>Teléfono Conmutador:</strong> 604 8503593</h5>
+            <h5 className="card-text"><strong>Correo institucional:</strong> <a href="mailto:secretaria@jaiperaurrao.ie.edu.co">secretaria@jaiperaurrao.ie.edu.co</a></h5>
+            <h5 className="card-text"><strong>Correo de notificaciones judiciales:</strong> <a href="mailto:rectoria@jaiperaurrao.ie.edu.co">rectoria@jaiperaurrao.ie.edu.co</a></h5>
           </div>
         </div>
       </div>
@@ -94,7 +97,7 @@ function Contactanos() {
 
 function Politicas() {
   return (
-      <div>
+      <div className='margin-top'>
           <h1>Politicas</h1>
       </div>
   );

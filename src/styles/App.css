@@ -81,9 +81,39 @@
   padding-bottom: 56px;
 }
 
+.green-border {
+  border: 3px solid;
+  border-image: linear-gradient(to right, #AED581, #B2F7EF) 10;
+}
+
+
+/* Contactanos Component */
+.contact-card {
+  border: 3px solid;
+  border-image: linear-gradient(to right, #AED581, #B2F7EF) 1;
+  background: linear-gradient(to bottom, #E8F5E9, #A5D6A7);
+}
+
+.card-header {
+  background: linear-gradient(to right, #AED581, #B2F7EF);
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* End Component */
+
 /* Jaipera Component */ 
 
+.header-jaipera {
+  width: 100%;
+  border-bottom: 3px solid;
+  border-image: linear-gradient(to right, #AED581, #B2F7EF) 10;
+}
 
+.jaipera-img {
+  width: 30rem;
+}
 
 /* End Component */
 
@@ -92,7 +122,6 @@
 .container {
   margin-top: 1rem;
 }
-
 
 
 /* Sena Component */
@@ -136,8 +165,6 @@
 }
 
 /* End Component */
-
-
 
 /* Moving images component */
 
@@ -256,6 +283,6 @@
   background-color: #AED581;
   width: 100%;
   border: 2px solid;
-  border-image: linear-gradient(to right, #000000, #B2F7EF) 5;
+  border-image: linear-gradient(to right, #22972c, #59e6d5) 5;
 }
 /* End Component */
