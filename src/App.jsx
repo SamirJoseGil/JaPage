@@ -15,11 +15,11 @@ function App() {
   return (
     <>        
     <Router>
-      <header className='header-app'>
-        <Navbar expand="lg" className="bg-body-tertiary" fixed='top'>
+      <header>
+        <Navbar expand="lg" className="bg-body-tertiary header-app" fixed='top'>
           <Container fluid className="d-flex justify-content-between align-items-center">
             <Navbar.Brand href="/Welcome" className="d-flex align-items-center">
-              <img src="../public/Img/Escudo.png" alt="Escudo" className="navbar-logo" />
+              <img src="/Img/Escudo.png" alt="Escudo" className="navbar-logo" />
               <strong>INSTITUCION EDUCATIVA RURAL JAIPERA</strong>
             </Navbar.Brand>
             <div className="d-flex">

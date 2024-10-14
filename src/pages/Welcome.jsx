@@ -1,18 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { Container, Nav, Navbar } from 'react-bootstrap';
-
-
-const images = [
-    '/ImgLayout/409090199_893417295913873_6431943884138392477_n.jpg',
-    '/ImgLayout/409103605_894058042516465_3086056766359029981_n.jpg',
-    '/ImgLayout/426383391_884813896774213_8697089442123622479_n.jpg',
-    '/ImgLayout/426400078_887276146527988_6685702721640920374_n.jpg',
-    '/ImgLayout/429510733_893417185913884_8989106216206896317_n.jpg',
-    '/ImgLayout/438299173_935010291754573_2235743285604805511_n.jpg',
-    '/ImgLayout/445221277_947692500486352_1983040342489269207_n.jpg',
-];
-
 
 export default Welcome;
 
@@ -98,15 +86,67 @@ function MiniMain() {
     );
 }
 
-
 function MovingImages() {
+    const [images, setImages] = useState([]);
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        const fetchImages = async () => {
+            try {
+                const response = await fetch('/movingImages/images.json'); // Ruta al archivo JSON
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const imagesList = await response.json();
+                setImages(imagesList);
+            } catch (error) {
+                console.error('Error fetching images:', error);
+            }
+        };
+
+        fetchImages();
+    }, []);
+
+    useEffect(() => {
+        if (images.length === 0) return;
+
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+        }, 5000); // Cambiar imagen cada 5 segundos
+
+        return () => clearInterval(interval);
+    }, [images.length]);
+
+    const handlePrevClick = () => {
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    };
+
+    const handleNextClick = () => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    };
+
     return (
         <div className='ImagesBackground'>
             <div className='ImagesContainer'>
-                {images.concat(images).map((src, index) => (
-                    <img key={index} src={src} alt={`Moving ${index}`} className='MovingImages' />
+                {images.length > 0 && images.map((image, index) => (
+                    <img
+                        key={index}
+                        src={`/movingImages/${image}`}
+                        alt={`Moving ${index}`}
+                        className={`MovingImages ${index === currentIndex ? 'active' : ''}`}
+                    />
                 ))}
             </div>
+            <div className="indicators">
+                {images.map((_, index) => (
+                    <span
+                        key={index}
+                        className={`indicator ${index === currentIndex ? 'active' : ''}`}
+                    ></span>
+                ))}
+            </div>
+            <button className="prevButton" onClick={handlePrevClick}>&#129152;</button>
+            <button className="nextButton" onClick={handleNextClick}>&#129154;</button>
         </div>
     );
 }

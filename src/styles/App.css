@@ -3,6 +3,11 @@
   text-align: center;
 }
 
+.header-app {
+  border-bottom: 3px solid;
+  border-image: linear-gradient(to right, #AED581, #B2F7EF) 10;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -72,44 +77,123 @@
 
 .content {
   flex: 1;
-  margin-top: 70px;
+  margin-top: 4.5rem;
   padding-bottom: 56px;
 }
 
+/* Jaipera Component */ 
+
+
+
+/* End Component */
+
+
+
+.container {
+  margin-top: 1rem;
+}
+
+
+
+/* Sena Component */
+
+.sena {
+  margin-right: 2rem;
+}
+
+.title-sena {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 1rem;
+}
+
+.logo-sena {
+  height: 5rem;
+  width: auto;
+  margin: 1rem;
+}
+
+.header-sena {
+  width: 100%;
+  border-bottom: 3px solid;
+  border-image: linear-gradient(to right, #ffc692, #ffead9) 10;
+}
+
+.navbar-nav {
+  margin: 0 auto;
+}
+
+.sena-img-background {
+  width: 30rem;
+}
+
+.margin-top {
+  margin-top: 2rem;
+}
+
+.logosimbolo {
+  width: 10rem;
+}
+
+/* End Component */
+
+
+
+/* Moving images component */
+
 .ImagesBackground {
   width: 100%;
-  height: 350px;
-  /* Ajustar según el tamaño deseado */
+  height: 500px;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #ffffff 0%, #C5E1A5 100%);
+  border-image: linear-gradient(to right, #B2E7B2, #A8E6CF) 1;
 }
 
 .ImagesContainer {
   display: flex;
-  width: calc(200%);
-  animation: move 20s linear infinite;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
 .MovingImages {
-  max-height: 350px;
-  width: auto;
-  flex-shrink: 0;
+  width: 90%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
 }
 
-@keyframes move {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
+.MovingImages.active {
+  opacity: 1;
 }
 
-.position-relative {
-  position: relative;
+.indicators {
+  position: absolute;
+  bottom: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.indicator.active {
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .overlay {
@@ -118,9 +202,35 @@
   left: 0;
   width: 100%;
   height: 100%;
-  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
 }
 
+.prevButton, .nextButton {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: black;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+  font-size: 1.2rem;
+  width: 50px;
+}
+
+.prevButton {
+  left: 10px;
+}
+
+.nextButton {
+  right: 10px;
+}
+
+/* End Component */
+
+/* Title Component */
 .overlay-image {
   position: absolute;
   top: 0;
@@ -143,6 +253,9 @@
 }
 
 .title-spacing {
-  background-color: white;
+  background-color: #AED581;
   width: 100%;
+  border: 2px solid;
+  border-image: linear-gradient(to right, #000000, #B2F7EF) 5;
 }
+/* End Component */
