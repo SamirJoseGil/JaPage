@@ -304,7 +304,7 @@ function MiniContactanos() {
             <div className='container d-flex justify-content-center align-items-center'>
                 <div className='card  p-3 mb-5 bg-white rounded green-border'>
                     <div className='card-header text-center blue-border background-blue'>
-                        <h2><strong>Contactanos</strong></h2>
+                        <h2><strong>Contáctanos</strong></h2>
                     </div>
                     <div className='card-body text-start blue-border'>
                         <h5><strong>Dirección:</strong> Cl. 39 #25-14, Urrao, Antioquia</h5>
