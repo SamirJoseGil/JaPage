@@ -10,7 +10,7 @@ function Jaipera() {
             <div className="container">
                 <div className="d-flex justify-content-center align-items-center">
                     <img src="" alt="" className='' />
-                    <h1 className=''>Quienes Somos?</h1>
+                    <h1 className=''>Quiénes Somos?</h1>
                 </div>
             </div>
             <div className='container'>
