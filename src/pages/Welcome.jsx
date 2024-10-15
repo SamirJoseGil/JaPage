@@ -26,8 +26,8 @@ function Welcome() {
                             <Navbar.Collapse id="basic-navbar-nav">
                                 <Nav className="me-auto">
                                     <Nav.Link as={Link} to="/Welcome">Inicio</Nav.Link>
-                                    <Nav.Link as={Link} to="/Welcome/Pictures">Pictures</Nav.Link>
-                                    <Nav.Link as={Link} to="/Welcome/Movies">Movies</Nav.Link>
+                                    <Nav.Link as={Link} to="/Welcome/Pictures">Imagenes</Nav.Link>
+                                    <Nav.Link as={Link} to="/Welcome/Movies">Videos</Nav.Link>
                                 </Nav>
                             </Navbar.Collapse>
                         </Container>

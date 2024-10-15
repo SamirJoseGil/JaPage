@@ -19,20 +19,20 @@ function App() {
         <header>
           <Navbar expand="lg" className="bg-body-tertiary header-app">
             <Container fluid className="d-flex justify-content-between align-items-center">
-              <Navbar.Brand href="/Welcome" className="d-flex align-items-center">
+              <Navbar.Brand href='/' className="d-flex align-items-center">
                 <img src="/Img/Escudo.png" alt="Escudo" className="navbar-logo" />
-                <strong>INSTITUCION EDUCATIVA RURAL JAIPERA</strong>
+                <strong>INSTITUCIÓN EDUCATIVA RURAL JAIPERA</strong>
               </Navbar.Brand>
               <div className="d-flex">
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                   <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
-                    <Nav.Link as={Link} to="/Welcome">Inicio</Nav.Link>
+                    <Nav.Link as={Link} to="/">Inicio</Nav.Link>
                     <Nav.Link as={Link} to="/Sena">SENA</Nav.Link>
                     <Nav.Link href="https://sinai.net.co" target="_blank" rel="noopener noreferrer">SINAI</Nav.Link>
                     <Nav.Link as={Link} to="/Politicas">Normatividad</Nav.Link>
-                    <Nav.Link as={Link} to="/Contactanos">Contactanos</Nav.Link>
-                    <Nav.Link as={Link} to="/Jaipera">Quienes Somos</Nav.Link>
+                    <Nav.Link as={Link} to="/Contactanos">Contáctanos</Nav.Link>
+                    <Nav.Link as={Link} to="/Jaipera">¿Quiénes somos?</Nav.Link>
                   </Nav>
                 </Navbar.Collapse>
               </div>
@@ -72,7 +72,7 @@ function App() {
 function Contactanos() {
   return (
     <div className='margin-top'>
-      <h1>Contactanos</h1>
+      <h1>Contáctanos</h1>
       <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: '62vh' }}>
         <div className="card shadow-lg p-3 mb-5 bg-white rounded blue-border" style={{ maxWidth: '600px' }}>
           <div className="card-header text-center blue-border blue-border background-blue">
@@ -95,7 +95,7 @@ function Contactanos() {
 function Politicas() {
   return (
     <div className='margin-top'>
-      <h1>Politicas</h1>
+      <h1>Políticas</h1>
     </div>
   );
 }
