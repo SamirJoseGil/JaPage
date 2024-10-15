@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { Container, Nav, Navbar } from 'react-bootstrap';
 
@@ -12,33 +12,34 @@ import './styles/App.css'
 export default App
 
 function App() {
+
   return (
-    <>        
-    <Router>
-      <header>
-        <Navbar expand="lg" className="bg-body-tertiary header-app" fixed='top'>
-          <Container fluid className="d-flex justify-content-between align-items-center">
-            <Navbar.Brand href="/Welcome" className="d-flex align-items-center">
-              <img src="/Img/Escudo.png" alt="Escudo" className="navbar-logo" />
-              <strong>INSTITUCION EDUCATIVA RURAL JAIPERA</strong>
-            </Navbar.Brand>
-            <div className="d-flex">
-              <Navbar.Toggle aria-controls="navbarScroll" />
-              <Navbar.Collapse id="navbarScroll">
-                <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
-                  <Nav.Link as={Link} to="/Welcome">Inicio</Nav.Link>
-                  <Nav.Link as={Link} to="/Sena">SENA</Nav.Link>
-                  <Nav.Link href="https://sinai.net.co" target="_blank" rel="noopener noreferrer">SINAI</Nav.Link>
-                  <Nav.Link as={Link} to="/Politicas">Normatividad</Nav.Link>
-                  <Nav.Link as={Link} to="/Contactanos">Contactanos</Nav.Link>
-                  <Nav.Link as={Link} to="/Jaipera">Quienes Somos</Nav.Link>
-                </Nav>
-              </Navbar.Collapse>
-            </div>
-          </Container>
-        </Navbar>
-      </header>
-      <main className="main-app">
+    <>
+      <Router>
+        <header>
+          <Navbar expand="lg" className="bg-body-tertiary header-app">
+            <Container fluid className="d-flex justify-content-between align-items-center">
+              <Navbar.Brand href="/Welcome" className="d-flex align-items-center">
+                <img src="/Img/Escudo.png" alt="Escudo" className="navbar-logo" />
+                <strong>INSTITUCION EDUCATIVA RURAL JAIPERA</strong>
+              </Navbar.Brand>
+              <div className="d-flex">
+                <Navbar.Toggle aria-controls="navbarScroll" />
+                <Navbar.Collapse id="navbarScroll">
+                  <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
+                    <Nav.Link as={Link} to="/Welcome">Inicio</Nav.Link>
+                    <Nav.Link as={Link} to="/Sena">SENA</Nav.Link>
+                    <Nav.Link href="https://sinai.net.co" target="_blank" rel="noopener noreferrer">SINAI</Nav.Link>
+                    <Nav.Link as={Link} to="/Politicas">Normatividad</Nav.Link>
+                    <Nav.Link as={Link} to="/Contactanos">Contactanos</Nav.Link>
+                    <Nav.Link as={Link} to="/Jaipera">Quienes Somos</Nav.Link>
+                  </Nav>
+                </Navbar.Collapse>
+              </div>
+            </Container>
+          </Navbar>
+        </header>
+        <main className="main-app">
           <div className="content">
             <Routes>
               <Route path="/Welcome/*" element={<Welcome />} />
@@ -49,24 +50,20 @@ function App() {
               <Route path="*" element={<Welcome />} />
             </Routes>
           </div>
-      </main>
+        </main>
       </Router>
-      <footer className="footer bg-dark text-white">
-            <Container>
-                <div className="d-flex justify-content-between align-items-center">
-                    <div>
-                        <p>
-                            Faceboock
-                        </p>
-                        <img src="" alt="" className="FaceboockLogo Icon"/>
-                    </div>
-                    <div>
-                        <p>
-                            &copy; 2024 - Institucion Educativa Rural Jaipera
-                        </p>
-                    </div>
-                </div>
-            </Container>
+      <footer className="footer bg-dark text-white shadow-top">
+        <div className="d-flex justify-content-between align-items-center py-3 container">
+          <div className="d-flex align-items-center">
+            <a href="https://www.facebook.com/institucioneducativa.jaipera" target="_blank" rel="noopener noreferrer" className="text-white d-flex align-items-center">
+              <i className="fab fa-facebook fa-2x me-2"></i>
+              <p className="mb-0">Síguenos en Facebook</p>
+            </a>
+          </div>
+          <div>
+            <p className="mb-0">&copy; 2024 - Institución Educativa Rural Jaipera</p>
+          </div>
+        </div>
       </footer>
     </>
   )
@@ -77,11 +74,11 @@ function Contactanos() {
     <div className='margin-top'>
       <h1>Contactanos</h1>
       <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: '62vh' }}>
-        <div className="card shadow-lg p-3 mb-5 bg-white rounded green-border" style={{ maxWidth: '600px' }}>
-          <div className="card-header text-center green-border">
+        <div className="card shadow-lg p-3 mb-5 bg-white rounded blue-border" style={{ maxWidth: '600px' }}>
+          <div className="card-header text-center blue-border blue-border background-blue">
             <h5><strong>Institución Educativa Jaiperá</strong></h5>
           </div>
-          <div className="card-body text-start green-border">
+          <div className="card-body text-start blue-border">
             <h5 className="card-text"><strong>Dirección:</strong> Cl. 39 #25-14, Urrao, Antioquia</h5>
             <h5 className="card-text"><strong>Horario de atención:</strong> 8:00 am - 3:00 pm</h5>
             <h5 className="card-text"><strong>Teléfono Conmutador:</strong> 604 8503593</h5>
@@ -97,8 +94,8 @@ function Contactanos() {
 
 function Politicas() {
   return (
-      <div className='margin-top'>
-          <h1>Politicas</h1>
-      </div>
+    <div className='margin-top'>
+      <h1>Politicas</h1>
+    </div>
   );
 }

@@ -14,7 +14,7 @@ function Jaipera() {
                 </div>
             </div>
             <div className='container'>
-                <Navbar bg="light" expand="lg" className='header-jaipera'>
+                <Navbar bg="light" expand="lg" className='green-border-bottom width-100'>
                     <Container fluid className='d-flex justify-content-center'>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
@@ -199,26 +199,14 @@ function InstitucionalSymbols() {
                     <p></p>
                     <img src="" alt="" />
                     <hr />
-
                     <h3>El Escudo</h3>
                     <p></p>
                     <img src="" alt="" />
                     <hr />
-
                     <h3>El Himno</h3>
                     <p></p>
-                    <div className="container d-flex justify-content-center align-items-center">
-                        <audio controls>
-                            <source src="" type="audio/mpeg" />
-                            Your browser does not support the audio element.
-                        </audio>
+                    <div className="">
                     </div>
-
-                    <hr />
-
-                    <h3>El Lema</h3>
-                    <p></p>
-                    <img src="" alt="" />
                 </div>
             </div>
         </div>
@@ -295,12 +283,17 @@ function PrinciplesFoundations() {
 
 function CoexistencialManual() {
     return (
-        <div className="container">
-            <div className="card">
-                <h2>Manual de Convivencia</h2>
-                <div className="card-body text-start">
-                </div>
-            </div>
+      <div className='margin-top'>
+        <h1>Manual de Convivencia</h1>
+        <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: '62vh' }}>
+          <iframe
+            src="/Manual de Convivencia Jaipera.pdf"
+            title="Manual de Convivencia"
+            width="100%"
+            height="650rem"
+            style={{ border: 'none' }}
+          ></iframe>
         </div>
-    )
-}
+      </div>
+    );
+  }

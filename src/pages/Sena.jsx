@@ -15,7 +15,7 @@ function Sena() {
                 </div>
             </div>
             <div className='container'>
-                <Navbar bg="light" expand="lg" className='header-sena'>
+                <Navbar bg="light" expand="lg" className='orange-border-bottom width-100'>
                     <Container fluid className='d-flex justify-content-center'>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
