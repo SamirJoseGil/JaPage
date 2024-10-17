@@ -51,11 +51,17 @@ function App() {
                 <Offcanvas.Body>
                   <Nav className="justify-content-end flex-grow-1 pe-3">
                     <Nav.Link as={Link} to="/">Inicio</Nav.Link>
+                    <hr />
                     <Nav.Link as={Link} to="/Sena">SENA</Nav.Link>
+                    <hr />
                     <Nav.Link href="https://sinai.net.co" target="_blank" rel="noopener noreferrer">SINAI</Nav.Link>
+                    <hr />
                     <Nav.Link as={Link} to="/Politicas">Normatividad</Nav.Link>
+                    <hr />
                     <Nav.Link as={Link} to="/Contactanos">Contáctanos</Nav.Link>
+                    <hr />
                     <Nav.Link as={Link} to="/Jaipera">¿Quiénes somos?</Nav.Link>
+                    <hr />
                     <Nav.Link as={Link} to="/Manuales">Manuales</Nav.Link>
                   </Nav>
                 </Offcanvas.Body>
