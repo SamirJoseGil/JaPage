@@ -7,7 +7,7 @@ import Welcome from './pages/Welcome'
 import Sena from './pages/Sena'
 
 import './styles/App.css'
-
+import './styles/utils.css'
 
 export default App
 
@@ -17,7 +17,7 @@ function App() {
     <>
       <Router>
         <header>
-          <Navbar expand="lg" className="bg-body-tertiary header-app">
+          <Navbar expand="lg" className="bg-body-tertiary green-border-bottom">
             <Container fluid className="d-flex justify-content-between align-items-center">
               <Navbar.Brand href='/' className="d-flex align-items-center">
                 <img src="/Img/Escudo.png" alt="Escudo" className="navbar-logo" />
@@ -40,23 +40,21 @@ function App() {
           </Navbar>
         </header>
         <main className="main-app">
-          <div className="content">
-            <Routes>
-              <Route path="/Welcome/*" element={<Welcome />} />
-              <Route path="/Sena/*" element={<Sena />} />
-              <Route path="/Politicas" element={<Politicas />} />
-              <Route path="/Contactanos" element={<Contactanos />} />
-              <Route path="/Jaipera/*" element={<Jaipera />} />
-              <Route path="*" element={<Welcome />} />
-            </Routes>
-          </div>
+          <Routes>
+            <Route path="/Welcome/*" element={<Welcome />} />
+            <Route path="/Sena/*" element={<Sena />} />
+            <Route path="/Politicas" element={<Politicas />} />
+            <Route path="/Contactanos" element={<Contactanos />} />
+            <Route path="/Jaipera/*" element={<Jaipera />} />
+            <Route path="*" element={<Welcome />} />
+          </Routes>
         </main>
       </Router>
       <footer className="footer bg-dark text-white shadow-top">
         <div className="d-flex justify-content-between align-items-center py-3 container">
           <div className="d-flex align-items-center">
             <a href="https://www.facebook.com/institucioneducativa.jaipera" target="_blank" rel="noopener noreferrer" className="text-white d-flex align-items-center">
-              <i className="fab fa-facebook fa-2x me-2"></i>
+              <i className="fab fa-facebook fa-2x me-2 mini-margin-right"></i>
               <p className="mb-0">Síguenos en Facebook</p>
             </a>
           </div>
@@ -96,6 +94,14 @@ function Politicas() {
   return (
     <div className='margin-top'>
       <h1>Políticas</h1>
+      <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: '62vh' }}>
+        <iframe
+          src="/public/GFPI-M-004 Manual Articulación SENA con la Educación Media.pdf"
+          title="Manual de Convivencia" 
+          className='custom-iframe'
+          style={{ border: 'none' }}
+        ></iframe>
+      </div>
     </div>
   );
 }

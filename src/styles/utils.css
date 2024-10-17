@@ -1,0 +1,126 @@
+/* Estiles Utils */
+
+.green-border {
+    border: 3px solid;
+    border-image: linear-gradient(to right, #44c444, #b2f7c3) 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .blue-border {
+    border: 3px solid;
+    border-image: linear-gradient(to right, #5df4ff, #c7fdff) 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .orange-border {
+    border: 3px solid;
+    border-image: linear-gradient(to right, #ffc692, #ffead9) 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .green-border-bottom {
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, #AED581, #B2F7EF) 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .blue-border-bottom {
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, #5df4ff, #c7fdff) 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .orange-border-bottom {
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, #ffc692, #ffead9) 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  .background-green {
+    background: linear-gradient(to bottom, #AED581, #B2F7EF);
+  }
+  
+  .background-blue {
+    background: linear-gradient(to left, #f1feff, #c7fdff);
+  }
+  
+  .background-orange {
+    background: linear-gradient(to bottom, #ffc692, #ffead9);
+  }
+  
+  .width-100 {
+    width: 100%;
+  }
+  
+  .margin { 
+    margin: 2rem;
+  }
+  
+  .mini-margin {
+    margin: 1rem;
+  }
+  
+  .margin-top {
+    margin-top: 2rem;
+  }
+  
+  .margin-bottom {
+    margin-bottom: 2rem;
+  }
+  
+  .margin-left {
+    margin-left: 2rem;
+  }
+  
+  .margin-right {
+    margin-right: 2rem;
+  }
+  
+  .mini-margin-top {
+    margin-top: 1rem;
+  }
+  
+  .mini-margin-bottom {
+    margin-bottom: 1rem;
+  }
+  
+  .mini-margin-right {
+    margin-right: 1rem;
+  }
+  
+  .mini-margin-left {
+    margin-left: 1rem;
+  }
+  
+  .shadow {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .shadow-top {
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .shadow-bottom {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card {
+    padding: 2rem;
+  }
+  
+  .container {
+    margin-top: 1rem;
+  }
+  
+  .text-align-center {
+    text-align: center;
+  }
+  
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  
+  .gap {
+    gap: 0.2rem;
+  }

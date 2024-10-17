@@ -14,7 +14,7 @@ function Welcome() {
                 </div>
                 <div className="overlay d-flex justify-content-center align-items-end">
                     <div className="title-spacing green-border">
-                        <h1 className="title-text">Institucion Educativa Rural Jaipera</h1>
+                        <h1 className="title-text">Institucion Educativa Rural Jaiperá</h1>
                     </div>
                 </div>
             </header>
@@ -149,9 +149,9 @@ function Pictures() {
     };
 
     return (
-        <div className="pictures-container">
-            <h1>Galería de Imágenes</h1>
-            <div className="movie-grid margin-top">
+        <div className="mini-margin text-align-center">
+            <h2>Galería de Imágenes</h2>
+            <div className="d-flex flex-wrap justify-content-center gap margin-top">
                 {images.slice(0, visibleImages).map((image, index) => (
                     <div key={index} className="image-item" onClick={() => handleImageClick(image)}>
                         <img src={image} alt={`Imagen ${index + 1}`} />
@@ -159,7 +159,7 @@ function Pictures() {
                 ))}
             </div>
             {visibleImages < images.length && (
-                <button onClick={loadMoreImages} className="load-more-button">
+                <button onClick={loadMoreImages} className="load-more-button margin-top">
                     Cargar más
                 </button>
             )}
@@ -229,9 +229,9 @@ function Movies() {
     }, [selectedMovie]);
 
     return (
-        <div className="movies-container">
-            <h1>Galería de Películas</h1>
-            <div className="movie-grid margin-top">
+        <div className="mini-margin text-align-center">
+            <h2>Galería de Películas</h2>
+            <div className="d-flex flex-wrap justify-content-center gap margin-top">
                 {movies.slice(0, visibleMovies).map((movie, index) => (
                     <div key={index} className="movie-item" onClick={() => handleMovieClick(movie)}>
                         <video src={movie.poster} alt={`Película ${index + 1}`} controls={false} />
@@ -258,6 +258,7 @@ function Movies() {
 function MiniPictures() {
     const [images, setImages] = useState([]);
     const navigate = useNavigate();
+    const [numImages, setNumImages] = useState(1);
 
     useEffect(() => {
         const fetchImages = async () => {
@@ -278,6 +279,29 @@ function MiniPictures() {
         };
 
         fetchImages();
+
+        const handleResize = () => {
+            const width = window.innerWidth;
+            if (width < 768) {
+                setNumImages(1); // Pantallas pequeñas
+            } else if (width < 1024) {
+                setNumImages(9); // Pantallas medianas
+            } else {
+                setNumImages(12); // Pantallas grandes
+            }
+        };
+
+        // Establecer el número inicial de imágenes
+        handleResize();
+
+        // Agregar el evento de redimensionamiento
+        window.addEventListener('resize', handleResize);
+
+        // Limpiar el evento de redimensionamiento al desmontar el componente
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+
     }, []);
 
     const handleContainerClick = () => {
@@ -285,10 +309,10 @@ function MiniPictures() {
     };
 
     return (
-        <div className="mini-pictures-container" onClick={handleContainerClick}>
+        <div className="mini-margin text-align-center" onClick={handleContainerClick}>
             <h2>Mini Galería de Imágenes</h2>
-            <div className="mini-image-grid">
-                {images.slice(0, 9).map((image, index) => (
+            <div className="d-flex flex-wrap justify-content-center gap">
+                {images.slice(0, numImages).map((image, index) => (
                     <div key={index} className="mini-image-item">
                         <img src={image} alt={`Imagen ${index + 1}`} />
                     </div>
@@ -321,11 +345,11 @@ function MiniContactanos() {
 function MiniMain() {
     return (
         <div className='container'>
-            <div className='d-flex'>
-                <div className='col-6'>
+            <div className='custom-d-flex custom-mini-main'>
+                <div className='col-12 col-md-6'>
                     <MiniPictures />
                 </div>
-                <div className='col-6'>
+                <div className='col-12 col-md-6'>
                     <div>
                         <div>
                             <MiniContactanos />
