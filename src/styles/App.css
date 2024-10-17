@@ -30,6 +30,36 @@ body, html {
   color: white;
 }
 
+/* App.css */
+.card {
+  transition: transform 0.2s;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #555;
+}
+
+.btn-primary-custom {
+  border: 3px solid;
+  border-image: linear-gradient(to right, #5df4ff, #c7fdff) 10;
+  background: linear-gradient(to left, #f1feff, #c7fdff);
+  color: #343a40;
+  border-radius: 20%;
+}
+
+.btn-primary-custom:hover {
+  border: 3px solid;
+  border-image: linear-gradient(to right, #5df4ff, #c7fdff) 10;
+  background: linear-gradient(to left, #f1feff, #c7fdff);
+  color: #343a40;
+}
+
 /* Navbar Styles */
 .navbar {
   background-color: #f8f9fa;

@@ -17,7 +17,7 @@ function SENA() {
                 <Navbar bg="light" expand="lg" className='orange-border-bottom width-100'>
                     <Container fluid className='d-flex justify-content-center'>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                        <Navbar.Collapse id="basic-navbar-nav">
+                        <Navbar.Collapse id="basic-navbar-nav" className='justify-content-center'>
                             <Nav className="me-auto">
                                 <Nav.Link as={Link} to="/SENA">Inicio</Nav.Link>
                                 <Nav.Link as={Link} to="/SENA/History">Historia del SENA</Nav.Link>

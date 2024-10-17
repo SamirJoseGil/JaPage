@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 import Jaipera from './pages/Jaipera'
 import Welcome from './pages/Welcome'
@@ -10,6 +12,14 @@ import './styles/App.css'
 import './styles/utils.css'
 
 export default App
+
+const links = [
+  {
+    url: 'https://fyepesa.github.io/trabajo.github.io/',
+    title: 'SINERGIA ',
+    description: 'Esta pagina esta enfocada en mejorar el rendimiento de cada estudiante de acuerdo a su empeño, cuenta con ejercicios prácticos de refuerzo para afianzar conceptos básicos.'
+  },
+];
 
 function App() {
 
@@ -33,6 +43,7 @@ function App() {
                     <Nav.Link as={Link} to="/Politicas">Normatividad</Nav.Link>
                     <Nav.Link as={Link} to="/Contactanos">Contáctanos</Nav.Link>
                     <Nav.Link as={Link} to="/Jaipera">¿Quiénes somos?</Nav.Link>
+                    <Nav.Link as={Link} to="/Manuales">Manuales</Nav.Link>
                   </Nav>
                 </Navbar.Collapse>
               </div>
@@ -41,6 +52,7 @@ function App() {
         </header>
         <main className="main-app">
           <Routes>
+            <Route path="/Manuales" element={<Manuals />} />
             <Route path="/Welcome/*" element={<Welcome />} />
             <Route path="/Sena/*" element={<Sena />} />
             <Route path="/Politicas" element={<Politicas />} />
@@ -97,10 +109,37 @@ function Politicas() {
       <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: '62vh' }}>
         <iframe
           src="/public/GFPI-M-004 Manual Articulación SENA con la Educación Media.pdf"
-          title="Manual de Convivencia" 
+          title="Manual de Convivencia"
           className='custom-iframe'
           style={{ border: 'none' }}
         ></iframe>
+      </div>
+    </div>
+  );
+}
+
+
+function Manuals() {
+  return (
+    <div className="container card mt-5">
+      <div className="row card-body">
+        {links.map((link, index) => (
+          <div className="col-md-4 mb-4" key={index}>
+            <Card className="h-100">
+              <Card.Body>
+                <Card.Title>{link.title}</Card.Title>
+                <hr />
+                <div className="text-justify">
+                  <Card.Text>{link.description}</Card.Text>
+                </div>
+                <hr />
+                <a className='btn btn-primary-custom' href={link.url} target="_blank" rel="noopener noreferrer">
+                  Visitar
+                </a>
+              </Card.Body>
+            </Card>
+          </div>
+        ))}
       </div>
     </div>
   );
