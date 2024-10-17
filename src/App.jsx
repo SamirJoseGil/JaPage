@@ -17,12 +17,14 @@ const links = [
   {
     url: 'https://fyepesa.github.io/trabajo.github.io/',
     title: 'SINERGIA ',
-    description: 'Esta pagina esta enfocada en mejorar el rendimiento de cada estudiante de acuerdo a su empeño, cuenta con ejercicios prácticos de refuerzo para afianzar conceptos básicos.'
+    description: 'Esta pagina esta enfocada en mejorar el rendimiento de cada estudiante de acuerdo a su empeño, cuenta con ejercicios prácticos de refuerzo para afianzar conceptos básicos.',
+    autors: 'Dana Mallerly, Denis Estefania, Diego Montoya, Marta Agudelo, Yuliana Sepulveda, Tomas Ibarra'
   },
   {
     url: 'https://proyecto-aleja.vercel.app/',
     title: 'Manual Digital de Ensamble y Desensamble',
-    description: 'Este manual interactivo de ensamble y desensamble, desarrollado con HTML, CSS y JavaScript, guía paso a paso en el proceso de ensamblar y desensamblar componentes de un equipo de cómputo. Ofrece instrucciones claras con elementos visuales dinámicos, facilitando el aprendizaje práctico para usuarios sin experiencia previa.'
+    description: 'Este manual interactivo de ensamble y desensamble, desarrollado con HTML, CSS y JavaScript, guía paso a paso en el proceso de ensamblar y desensamblar componentes de un equipo de cómputo. Ofrece instrucciones claras con elementos visuales dinámicos, facilitando el aprendizaje práctico para usuarios sin experiencia previa.',
+    autors: 'Alejandra Garcia, Salome Serna'
   }
 ];
 
@@ -141,6 +143,9 @@ function Manuals() {
                 <a className='btn btn-primary-custom' href={link.url} target="_blank" rel="noopener noreferrer">
                   Visitar
                 </a>
+                <div className='text-justify negrilla'>
+                  <Card.Text>{link.autors}</Card.Text>
+                </div>
               </Card.Body>
             </Card>
           </div>

@@ -124,3 +124,7 @@
   .gap {
     gap: 0.2rem;
   }
+
+  .negrilla {
+    font-weight: bold;
+  }
