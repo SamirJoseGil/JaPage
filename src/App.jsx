@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Navbar, Nav, Container, Offcanvas, Form, Button } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 
 import Jaipera from './pages/Jaipera'
 import Welcome from './pages/Welcome'
@@ -29,21 +28,28 @@ const links = [
 ];
 
 function App() {
-
   return (
     <>
       <Router>
         <header>
           <Navbar expand="lg" className="bg-body-tertiary green-border-bottom">
-            <Container fluid className="d-flex justify-content-between align-items-center">
-              <Navbar.Brand href='/' className="d-flex align-items-center">
+            <Container fluid>
+              <Navbar.Brand href="/" className="d-flex align-items-center">
                 <img src="/Img/Escudo.png" alt="Escudo" className="navbar-logo" />
                 <strong>INSTITUCIÓN EDUCATIVA RURAL JAIPERA</strong>
               </Navbar.Brand>
-              <div className="d-flex">
-                <Navbar.Toggle aria-controls="navbarScroll" />
-                <Navbar.Collapse id="navbarScroll">
-                  <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
+              <Navbar.Toggle aria-controls="offcanvasNavbar" />
+              <Navbar.Offcanvas
+                id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel"
+                placement="start">
+                <Offcanvas.Header closeButton>
+                  <Offcanvas.Title id="offcanvasNavbarLabel">
+                    Menú de Navegación
+                  </Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                  <Nav className="justify-content-end flex-grow-1 pe-3">
                     <Nav.Link as={Link} to="/">Inicio</Nav.Link>
                     <Nav.Link as={Link} to="/Sena">SENA</Nav.Link>
                     <Nav.Link href="https://sinai.net.co" target="_blank" rel="noopener noreferrer">SINAI</Nav.Link>
@@ -52,8 +58,8 @@ function App() {
                     <Nav.Link as={Link} to="/Jaipera">¿Quiénes somos?</Nav.Link>
                     <Nav.Link as={Link} to="/Manuales">Manuales</Nav.Link>
                   </Nav>
-                </Navbar.Collapse>
-              </div>
+                </Offcanvas.Body>
+              </Navbar.Offcanvas>
             </Container>
           </Navbar>
         </header>
@@ -68,20 +74,20 @@ function App() {
             <Route path="*" element={<Welcome />} />
           </Routes>
         </main>
+        <footer className="footer bg-dark text-white shadow-top">
+          <div className="d-flex justify-content-between align-items-center py-3 container">
+            <div className="d-flex align-items-center">
+              <a href="https://www.facebook.com/institucioneducativa.jaipera" target="_blank" rel="noopener noreferrer" className="text-white d-flex align-items-center">
+                <i className="fab fa-facebook fa-2x me-2 mini-margin-right"></i>
+                <p className="mb-0">Síguenos en Facebook</p>
+              </a>
+            </div>
+            <div>
+              <p className="mb-0">&copy; 2024 - Institución Educativa Rural Jaipera</p>
+            </div>
+          </div>
+        </footer>
       </Router>
-      <footer className="footer bg-dark text-white shadow-top">
-        <div className="d-flex justify-content-between align-items-center py-3 container">
-          <div className="d-flex align-items-center">
-            <a href="https://www.facebook.com/institucioneducativa.jaipera" target="_blank" rel="noopener noreferrer" className="text-white d-flex align-items-center">
-              <i className="fab fa-facebook fa-2x me-2 mini-margin-right"></i>
-              <p className="mb-0">Síguenos en Facebook</p>
-            </a>
-          </div>
-          <div>
-            <p className="mb-0">&copy; 2024 - Institución Educativa Rural Jaipera</p>
-          </div>
-        </div>
-      </footer>
     </>
   )
 }
