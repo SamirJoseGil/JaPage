@@ -143,6 +143,7 @@ function Manuals() {
                 <a className='btn btn-primary-custom' href={link.url} target="_blank" rel="noopener noreferrer">
                   Visitar
                 </a>
+                <hr />
                 <div className='text-justify negrilla'>
                   <Card.Text>{link.autors}</Card.Text>
                 </div>
