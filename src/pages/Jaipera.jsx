@@ -289,8 +289,7 @@ function CoexistencialManual() {
           <iframe
             src="/Manual de Convivencia Jaipera.pdf"
             title="Manual de Convivencia"
-            width="100%"
-            height="650rem"
+            className='custom-iframe'
             style={{ border: 'none' }}
           ></iframe>
         </div>

@@ -502,10 +502,12 @@ video, .image-item img, .movie-item img, .mini-image-item img {
 
 .prevButton {
   left: 1rem;
+  z-index: 100000;
 }
 
 .nextButton {
   right: 1rem;
+  z-index: 100000;
 }
 
 @media (max-width: 768px) {

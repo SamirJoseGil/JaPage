@@ -108,7 +108,7 @@ function Politicas() {
       <h1>Políticas</h1>
       <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: '62vh' }}>
         <iframe
-          src="/public/GFPI-M-004 Manual Articulación SENA con la Educación Media.pdf"
+          src="/GFPI-M-004 Manual Articulación SENA con la Educación Media.pdf"
           title="Manual de Convivencia"
           className='custom-iframe'
           style={{ border: 'none' }}
