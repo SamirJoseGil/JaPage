@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { Navbar, Nav, Container, Offcanvas, Form, Button } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
@@ -28,6 +28,20 @@ const links = [
 ];
 
 function App() {
+
+  const offcanvasRef = useRef(null);
+
+  const handleClose = () => {
+    if (offcanvasRef.current) {
+      const offcanvasElement = offcanvasRef.current;
+      const bsOffcanvas = window.bootstrap.Offcanvas.getInstance(offcanvasElement);
+      if (bsOffcanvas) {
+        bsOffcanvas.hide();
+      }
+    }
+  };
+
+
   return (
     <>
       <Router>
@@ -42,7 +56,8 @@ function App() {
               <Navbar.Offcanvas
                 id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel"
-                placement="start">
+                placement="start"
+                ref={offcanvasRef}>
                 <Offcanvas.Header closeButton>
                   <Offcanvas.Title id="offcanvasNavbarLabel">
                     Menú de Navegación
@@ -50,19 +65,19 @@ function App() {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                   <Nav className="justify-content-end flex-grow-1 pe-3">
-                    <Nav.Link as={Link} to="/">Inicio</Nav.Link>
+                    <Nav.Link as={Link} to="/" onClick={handleClose}>Inicio</Nav.Link>
                     <hr />
-                    <Nav.Link as={Link} to="/Sena">SENA</Nav.Link>
+                    <Nav.Link as={Link} to="/Sena" onClick={handleClose}>SENA</Nav.Link>
                     <hr />
-                    <Nav.Link href="https://sinai.net.co" target="_blank" rel="noopener noreferrer">SINAI</Nav.Link>
+                    <Nav.Link href="https://sinai.net.co" target="_blank" rel="noopener noreferrer" onClick={handleClose}>SINAI</Nav.Link>
                     <hr />
-                    <Nav.Link as={Link} to="/Politicas">Normatividad</Nav.Link>
+                    <Nav.Link as={Link} to="/Politicas" onClick={handleClose}>Normatividad</Nav.Link>
                     <hr />
-                    <Nav.Link as={Link} to="/Contactanos">Contáctanos</Nav.Link>
+                    <Nav.Link as={Link} to="/Contactanos" onClick={handleClose}>Contáctanos</Nav.Link>
                     <hr />
-                    <Nav.Link as={Link} to="/Jaipera">¿Quiénes somos?</Nav.Link>
+                    <Nav.Link as={Link} to="/Jaipera" onClick={handleClose}>¿Quiénes somos?</Nav.Link>
                     <hr />
-                    <Nav.Link as={Link} to="/Manuales">Manuales</Nav.Link>
+                    <Nav.Link as={Link} to="/Manuales" onClick={handleClose}>Manuales</Nav.Link>
                   </Nav>
                 </Offcanvas.Body>
               </Navbar.Offcanvas>
