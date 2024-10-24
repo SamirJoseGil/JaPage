@@ -1,46 +1,28 @@
-import React, { useEffect, useRef } from 'react'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import React, { useEffect, useRef } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Offcanvas, Form, Button } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 
-import Jaipera from './pages/Jaipera'
-import Welcome from './pages/Welcome'
-import Sena from './pages/Sena'
+import Jaipera from './pages/Jaipera';
+import Welcome from './pages/Welcome';
+import Sena from './pages/Sena';
 
-import './styles/App.css'
-import './styles/utils.css'
+import './styles/App.css';
+import './styles/utils.css';
 
-export default App
-
-const links = [
-  {
-    url: 'https://fyepesa.github.io/trabajo.github.io/',
-    title: 'SINERGIA ',
-    description: 'Esta pagina esta enfocada en mejorar el rendimiento de cada estudiante de acuerdo a su empeño, cuenta con ejercicios prácticos de refuerzo para afianzar conceptos básicos.',
-    autors: 'Dana Mallerly, Denis Estefania, Diego Montoya, Marta Agudelo, Yuliana Sepulveda, Tomas Ibarra'
-  },
-  {
-    url: 'https://proyecto-aleja.vercel.app/',
-    title: 'Manual Digital de Ensamble y Desensamble',
-    description: 'Este manual interactivo de ensamble y desensamble, desarrollado con HTML, CSS y JavaScript, guía paso a paso en el proceso de ensamblar y desensamblar componentes de un equipo de cómputo. Ofrece instrucciones claras con elementos visuales dinámicos, facilitando el aprendizaje práctico para usuarios sin experiencia previa.',
-    autors: 'Alejandra Garcia, Salome Serna'
-  }
-];
-
-function App() {
-
+export default function App() {
   const offcanvasRef = useRef(null);
 
+  // Manejo de cerrar el Offcanvas con mayor seguridad
   const handleClose = () => {
     if (offcanvasRef.current) {
       const offcanvasElement = offcanvasRef.current;
-      const bsOffcanvas = window.bootstrap.Offcanvas.getInstance(offcanvasElement);
+      const bsOffcanvas = window.bootstrap?.Offcanvas?.getInstance(offcanvasElement);
       if (bsOffcanvas) {
         bsOffcanvas.hide();
       }
     }
   };
-
 
   return (
     <>
@@ -57,7 +39,8 @@ function App() {
                 id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel"
                 placement="start"
-                ref={offcanvasRef}>
+                ref={offcanvasRef}
+              >
                 <Offcanvas.Header closeButton>
                   <Offcanvas.Title id="offcanvasNavbarLabel">
                     Menú de Navegación
@@ -76,8 +59,7 @@ function App() {
                     <Nav.Link as={Link} to="/Contactanos" onClick={handleClose}>Contáctanos</Nav.Link>
                     <hr />
                     <Nav.Link as={Link} to="/Jaipera" onClick={handleClose}>¿Quiénes somos?</Nav.Link>
-                    <hr />
-                    <Nav.Link as={Link} to="/Noticias" onClick={handleClose}>Noticias</Nav.Link>
+                    {/* <Nav.Link as={Link} to="/Noticias" onClick={handleClose}>Noticias</Nav.Link> */}
                     <hr />
                     <Nav.Link as={Link} to="/Manuales" onClick={handleClose}>Manuales</Nav.Link>
                   </Nav>
@@ -86,6 +68,7 @@ function App() {
             </Container>
           </Navbar>
         </header>
+
         <main className="main-app">
           <Routes>
             <Route path="/Noticias" element={<FacebookPage pageUrl="https://www.facebook.com/institucioneducativa.jaipera" />} />
@@ -98,6 +81,7 @@ function App() {
             <Route path="*" element={<Welcome />} />
           </Routes>
         </main>
+
         <footer className="footer bg-dark text-white shadow-top">
           <div className="d-flex justify-content-between align-items-center py-3 container">
             <div className="d-flex align-items-center">
@@ -113,9 +97,10 @@ function App() {
         </footer>
       </Router>
     </>
-  )
+  );
 }
 
+// Componente Contactanos
 function Contactanos() {
   return (
     <div className='margin-top'>
@@ -138,7 +123,27 @@ function Contactanos() {
   );
 }
 
+// Componente FacebookPage con mejor manejo del SDK de Facebook
+const FacebookPage = ({ pageUrl }) => {
+  return (
+    <div className="container">
+      <h1>Noticias</h1>
+      <div className="facebook-page">
+        <iframe
+          title="Facebook Page"
+          src={`https://www.facebook.com/plugins/page.php?href=${pageUrl}&tabs=timeline&width=500&height=800`}
+          width="500"
+          height="800"
+          style={{ border: 'none', overflow: 'hidden' }}
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        ></iframe>
+      </div>
+    </div>
+  );
+};
 
+
+// Componente Politicas
 function Politicas() {
   return (
     <div className='margin-top'>
@@ -155,7 +160,7 @@ function Politicas() {
   );
 }
 
-
+// Componente Manuals
 function Manuals() {
   return (
     <div className="container card mt-5">
@@ -185,46 +190,3 @@ function Manuals() {
     </div>
   );
 }
-
-const FacebookPage = ({ pageUrl }) => {
-  useEffect(() => {
-    if (window.FB) {
-      window.FB.XFBML.parse();
-    } else {
-      window.fbAsyncInit = function () {
-        window.FB.init({
-          xfbml: true,
-          version: 'v10.0'
-        });
-        window.FB.XFBML.parse();
-      };
-
-      (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) { return; }
-        js = d.createElement(s); js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    }
-  }, []);
-
-  return (
-    <div className="container">
-      <h1>Noticias</h1>
-      <div className="facebook-page">
-        <div className="fb-page"
-          data-href={pageUrl}
-          data-tabs="timeline"
-          data-width="1000"
-          data-height="800"
-          data-small-header="false"
-          data-adapt-container-width="true"
-          data-hide-cover="false"
-          data-show-facepile="true">
-        </div>
-      </div>
-    </div>
-
-  );
-};
