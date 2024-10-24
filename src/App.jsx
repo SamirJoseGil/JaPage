@@ -188,7 +188,6 @@ function Manuals() {
 
 const FacebookPage = ({ pageUrl }) => {
   useEffect(() => {
-    // Cargar el SDK de Facebook
     if (window.FB) {
       window.FB.XFBML.parse();
     } else {
