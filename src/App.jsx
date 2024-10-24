@@ -10,6 +10,23 @@ import Sena from './pages/Sena';
 import './styles/App.css';
 import './styles/utils.css';
 
+const links = [
+  {
+    url: 'https://fyepesa.github.io/trabajo.github.io/',
+    title: 'SINERGIA ',
+    description: 'Esta pagina esta enfocada en mejorar el rendimiento de cada estudiante de acuerdo a su empeño, cuenta con ejercicios prácticos de refuerzo para afianzar conceptos básicos.',
+    autors: 'Dana Mallerly, Denis Estefania, Diego Montoya, Marta Agudelo, Yuliana Sepulveda, Tomas Ibarra'
+  },
+  {
+    url: 'https://proyecto-aleja.vercel.app/',
+    title: 'Manual Digital de Ensamble y Desensamble',
+    description: 'Este manual interactivo de ensamble y desensamble, desarrollado con HTML, CSS y JavaScript, guía paso a paso en el proceso de ensamblar y desensamblar componentes de un equipo de cómputo. Ofrece instrucciones claras con elementos visuales dinámicos, facilitando el aprendizaje práctico para usuarios sin experiencia previa.',
+    autors: 'Alejandra Garcia, Salome Serna'
+  }
+];
+
+
+
 export default function App() {
   const offcanvasRef = useRef(null);
 
@@ -131,8 +148,8 @@ const FacebookPage = ({ pageUrl }) => {
       <div className="facebook-page">
         <iframe
           title="Facebook Page"
-          src={`https://www.facebook.com/plugins/page.php?href=${pageUrl}&tabs=timeline&width=500&height=800`}
-          width="500"
+          src={`https://www.facebook.com/plugins/page.php?href=${pageUrl}&tabs=timeline&width=1000&height=800`}
+          width="1000"
           height="800"
           style={{ border: 'none', overflow: 'hidden' }}
           allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
