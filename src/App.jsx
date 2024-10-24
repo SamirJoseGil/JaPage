@@ -88,7 +88,7 @@ function App() {
         </header>
         <main className="main-app">
           <Routes>
-          <Route path="/Noticias" element={<FacebookPage pageUrl="https://www.facebook.com/institucioneducativa.jaipera" />} />
+            <Route path="/Noticias" element={<FacebookPage pageUrl="https://www.facebook.com/institucioneducativa.jaipera" />} />
             <Route path="/Manuales" element={<Manuals />} />
             <Route path="/Welcome/*" element={<Welcome />} />
             <Route path="/Sena/*" element={<Sena />} />
@@ -210,17 +210,20 @@ const FacebookPage = ({ pageUrl }) => {
   }, []);
 
   return (
-    <div className="facebook-page">
-      <div className="fb-page"
-        data-href={pageUrl}
-        data-tabs="timeline"
-        data-width="1000"
-        data-height="800"
-        data-small-header="false"
-        data-adapt-container-width="true"
-        data-hide-cover="false"
-        data-show-facepile="true">
+    <div className="container">
+      <div className="facebook-page">
+        <div className="fb-page"
+          data-href={pageUrl}
+          data-tabs="timeline"
+          data-width="1000"
+          data-height="800"
+          data-small-header="false"
+          data-adapt-container-width="true"
+          data-hide-cover="false"
+          data-show-facepile="true">
+        </div>
       </div>
     </div>
+
   );
 };
