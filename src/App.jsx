@@ -59,7 +59,7 @@ export default function App() {
                     <Nav.Link as={Link} to="/Contactanos" onClick={handleClose}>Contáctanos</Nav.Link>
                     <hr />
                     <Nav.Link as={Link} to="/Jaipera" onClick={handleClose}>¿Quiénes somos?</Nav.Link>
-                    {/* <Nav.Link as={Link} to="/Noticias" onClick={handleClose}>Noticias</Nav.Link> */}
+                    <Nav.Link as={Link} to="/Noticias" onClick={handleClose}>Noticias</Nav.Link>
                     <hr />
                     <Nav.Link as={Link} to="/Manuales" onClick={handleClose}>Manuales</Nav.Link>
                   </Nav>
