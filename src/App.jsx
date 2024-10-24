@@ -29,12 +29,10 @@ const links = [
 
 export default function App() {
   const offcanvasRef = useRef(null);
-
-  // Manejo de cerrar el Offcanvas con mayor seguridad
   const handleClose = () => {
     if (offcanvasRef.current) {
       const offcanvasElement = offcanvasRef.current;
-      const bsOffcanvas = window.bootstrap?.Offcanvas?.getInstance(offcanvasElement);
+      const bsOffcanvas = window.bootstrap.Offcanvas.getInstance(offcanvasElement);
       if (bsOffcanvas) {
         bsOffcanvas.hide();
       }
@@ -76,6 +74,7 @@ export default function App() {
                     <Nav.Link as={Link} to="/Contactanos" onClick={handleClose}>Contáctanos</Nav.Link>
                     <hr />
                     <Nav.Link as={Link} to="/Jaipera" onClick={handleClose}>¿Quiénes somos?</Nav.Link>
+                    <hr />
                     <Nav.Link as={Link} to="/Noticias" onClick={handleClose}>Noticias</Nav.Link>
                     <hr />
                     <Nav.Link as={Link} to="/Manuales" onClick={handleClose}>Manuales</Nav.Link>
@@ -145,7 +144,7 @@ const FacebookPage = ({ pageUrl }) => {
   return (
     <div className="container text-center">
       <h1>Noticias</h1>
-      <div className="facebook-page">
+      <div className="facebook-page text-center">
         <iframe
           title="Facebook Page"
           className='custom-iframe'
