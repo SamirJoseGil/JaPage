@@ -143,7 +143,7 @@ function Contactanos() {
 // Componente FacebookPage con mejor manejo del SDK de Facebook
 const FacebookPage = ({ pageUrl }) => {
   return (
-    <div className="container">
+    <div className="container text-center">
       <h1>Noticias</h1>
       <div className="facebook-page">
         <iframe
