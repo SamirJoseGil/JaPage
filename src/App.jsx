@@ -77,6 +77,8 @@ function App() {
                     <hr />
                     <Nav.Link as={Link} to="/Jaipera" onClick={handleClose}>¿Quiénes somos?</Nav.Link>
                     <hr />
+                    <Nav.Link as={Link} to="/Noticias" onClick={handleClose}>Noticias</Nav.Link>
+                    <hr />
                     <Nav.Link as={Link} to="/Manuales" onClick={handleClose}>Manuales</Nav.Link>
                   </Nav>
                 </Offcanvas.Body>
@@ -86,6 +88,7 @@ function App() {
         </header>
         <main className="main-app">
           <Routes>
+          <Route path="/Noticias" element={<FacebookPage pageUrl="https://www.facebook.com/institucioneducativa.jaipera" />} />
             <Route path="/Manuales" element={<Manuals />} />
             <Route path="/Welcome/*" element={<Welcome />} />
             <Route path="/Sena/*" element={<Sena />} />
@@ -182,3 +185,43 @@ function Manuals() {
     </div>
   );
 }
+
+const FacebookPage = ({ pageUrl }) => {
+  useEffect(() => {
+    // Cargar el SDK de Facebook
+    if (window.FB) {
+      window.FB.XFBML.parse();
+    } else {
+      window.fbAsyncInit = function () {
+        window.FB.init({
+          xfbml: true,
+          version: 'v10.0'
+        });
+        window.FB.XFBML.parse();
+      };
+
+      (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) { return; }
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    }
+  }, []);
+
+  return (
+    <div className="facebook-page">
+      <div className="fb-page"
+        data-href={pageUrl}
+        data-tabs="timeline"
+        data-width="1000"
+        data-height="800"
+        data-small-header="false"
+        data-adapt-container-width="true"
+        data-hide-cover="false"
+        data-show-facepile="true">
+      </div>
+    </div>
+  );
+};

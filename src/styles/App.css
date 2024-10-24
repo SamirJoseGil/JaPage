@@ -60,6 +60,11 @@ body, html {
   color: #343a40;
 }
 
+.facebook-feed {
+  margin: 20px auto;
+  max-width: 500px;
+}
+
 /* Navbar Styles */
 .navbar {
   background-color: #f8f9fa;
