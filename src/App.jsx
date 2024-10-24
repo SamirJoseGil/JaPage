@@ -211,6 +211,7 @@ const FacebookPage = ({ pageUrl }) => {
 
   return (
     <div className="container">
+      <h1>Noticias</h1>
       <div className="facebook-page">
         <div className="fb-page"
           data-href={pageUrl}
