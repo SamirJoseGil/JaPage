@@ -148,6 +148,7 @@ const FacebookPage = ({ pageUrl }) => {
       <div className="facebook-page">
         <iframe
           title="Facebook Page"
+          className='custom-iframe'
           src={`https://www.facebook.com/plugins/page.php?href=${pageUrl}&tabs=timeline&width=1000&height=800`}
           width="1000"
           height="800"
